@@ -1,0 +1,13 @@
+<!-- main.component.html -->
+
+<div>
+  <form (ngSubmit)="onSubmit()">
+    <label for="pseudo">Pseudo:</label>
+    <input type="text" id="pseudo" [(ngModel)]="pseudo" name="pseudo" required>
+    <button type="submit">Valider</button>
+  </form>
+
+  <div *ngFor="let pseudo of pseudos">
+    <app-usercards [pseudo]="pseudo"></app-usercards>
+  </div>
+</div>
