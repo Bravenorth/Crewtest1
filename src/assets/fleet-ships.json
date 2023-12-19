@@ -1,0 +1,6 @@
+{
+  "ships": [
+    { "name": "Constellation Andromeda", "stats": { "maxCrew": 5, "cargo": "96 SCU" } },
+    { "name": "Hercules C2 Starlifter", "stats": { "maxCrew": 2, "cargo": "500 SCU" } }
+  ]
+}
