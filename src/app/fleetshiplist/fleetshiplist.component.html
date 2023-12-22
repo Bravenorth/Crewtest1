@@ -1,12 +1,19 @@
 <h2>La liste des vaisseaux</h2>
-<ul>
-    <li *ngFor="let ship of Shiplist | async">
-        <b>{{ ship.name }}</b><br>
-        MAX CREW : {{ ship.maxcrew }}<br>
-        PILOTE(S) : {{ ship.pilotseat }}<br>
-        NOMBRE DE SIEGES : {{ ship.maxseats }}<br>
-        NOMBRE DE TOURELLES : {{ ship.gunnerseats }}<br>
-        NOMBRE DE TOURELLES REMOTES : {{ ship.mannedturrets }}<br>
-        CARGO : {{ ship.maxcargo }} SCU
+<select id="shipSelect" [(ngModel)]="selectedShipName">
+  <option value="">Sélectionner un vaisseau</option>
+  <option *ngFor="let ship of Shiplist | async" [value]="ship.name">{{ ship.name }}</option>
+</select>
+
+<ul *ngIf="selectedShipName">
+  <ng-container *ngFor="let ship of Shiplist | async">
+    <li *ngIf="!selectedShipName || ship.name === selectedShipName">
+      <b>{{ ship.name }}</b><br>
+      MAX CREW : {{ ship.maxcrew }}<br>
+      PILOTE(S) : {{ ship.pilotseat }}<br>
+      NOMBRE DE SIEGES : {{ ship.maxseats }}<br>
+      NOMBRE DE TOURELLES : {{ ship.gunnerseats }}<br>
+      NOMBRE DE TOURELLES REMOTES : {{ ship.mannedturrets }}<br>
+      CARGO : {{ ship.maxcargo }} SCU
     </li>
+  </ng-container>
 </ul>

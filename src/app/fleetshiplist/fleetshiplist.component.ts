@@ -9,6 +9,7 @@ import { Observable } from 'rxjs';
   styleUrls: ['./fleetshiplist.component.scss']
 })
 export class FleetshiplistComponent implements OnInit {
+  selectedShipName: string = '';
   Shiplist!: Observable<Shiplist[]>;
 
   constructor(private ShiplistService: ShiplistService) { }
