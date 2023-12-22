@@ -1,14 +1,12 @@
-<div>
-  <h2>Fleet manager</h2>
-  <select [(ngModel)]="selectedShip">
-    <option value="" disabled>Select a ship</option>
-    <option *ngFor="let ship of filteredShips" [value]="ship.name">{{ ship.name }}</option>
-  </select>
-  <input type="text" [(ngModel)]="searchTerm" placeholder="Search by ship name" (input)="filterShips()">
-</div>
-<div>
-  <h3>{{ selectedShip }}</h3>
-</div>
-<div>
-  
-</div>
+<h2>La liste des vaisseaux</h2>
+<ul>
+    <li *ngFor="let ship of Shiplist | async">
+        <b>{{ ship.name }}</b><br>
+        MAX CREW : {{ ship.maxcrew }}<br>
+        PILOTE(S) : {{ ship.pilotseat }}<br>
+        NOMBRE DE SIEGES : {{ ship.maxseats }}<br>
+        NOMBRE DE TOURELLES : {{ ship.gunnerseats }}<br>
+        NOMBRE DE TOURELLES REMOTES : {{ ship.mannedturrets }}<br>
+        CARGO : {{ ship.maxcargo }} SCU
+    </li>
+</ul>

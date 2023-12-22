@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Users } from '../models/users.model';
 import { UsersService } from '../services/users.service';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-users',
