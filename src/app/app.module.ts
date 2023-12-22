@@ -8,13 +8,15 @@ import { MainComponent } from './main/main.component';
 import { FleetshiplistComponent } from './fleetshiplist/fleetshiplist.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { UsersComponent } from './users/users.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     MainComponent,
-    FleetshiplistComponent
+    FleetshiplistComponent,
+    UsersComponent
   ],
   imports: [
     BrowserModule,
